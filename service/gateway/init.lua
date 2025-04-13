@@ -144,6 +144,7 @@ s.resp.send = function(source, playerid, msg)
 end
 
 s.resp.sure_agent = function(source, fd, playerid, agent)
+    skynet.error("[gateway] sure_agent, recv, playerid=", playerid)
     local conn = conns[fd]
     if not conn then
         skynet.call("agentmgr", "lua", "reqkick", playerid, "未完成登录即下线")
