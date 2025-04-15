@@ -132,7 +132,7 @@ end
 s.resp.send = function(source, playerid, msg)
     local gplayer = players[playerid]
     if gplayer == nil then
-        skynet.error("resp.send no suce player")
+        skynet.error("resp.send no suce player, playerid=", playerid)
         return
     end
     local c = gplayer.conn

@@ -9,7 +9,7 @@ s.resp.client = function(source, fd, cmd, msg)
         local ret_msg = s.client[cmd](fd, msg, source)
         skynet.send(source, "lua", "send_by_fd", fd, ret_msg)
     else
-        skynet.error("s.resp.client fail", cmd)
+        skynet.error("[login] s.resp.client fail", cmd)
     end
 end
 
